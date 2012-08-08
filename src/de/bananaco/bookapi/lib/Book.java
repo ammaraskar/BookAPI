@@ -1,4 +1,4 @@
-package de.bananaco.bio.util;
+package de.bananaco.bookapi.lib;
 
 /**
  * API for modifying, viewing, and generally having
