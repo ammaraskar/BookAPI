@@ -1,5 +1,7 @@
 package de.bananaco.bookapi.lib;
 
+import java.util.List;
+
 /**
  * API for modifying, viewing, and generally having
  * fun with books
@@ -61,5 +63,11 @@ public interface Book {
 	 * @param pages
 	 */
 	public void setPages(String[] pages);
+	
+	/**
+	 * Sets the pages of the book
+	 * @param pages
+	 */
+	public void setPages(List<String> pages);
 
 }

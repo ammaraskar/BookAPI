@@ -1,5 +1,7 @@
 package de.bananaco.bookapi.lib;
 
+import java.util.List;
+
 import net.minecraft.server.ItemStack;
 import net.minecraft.server.NBTTagCompound;
 import net.minecraft.server.NBTTagList;
@@ -81,7 +83,9 @@ public class CraftBook implements Book {
     @Override
     public void setPages(String[] pages) {
         NBTTagList list = new NBTTagList();
-        for(int i=0; i<pages.length; i++) {
+        int size = pages.length;
+        if(size>50) size=50;
+        for(int i=0; i<size; i++) {
             String page = pages[i];
             // sanity checking on the page
             if(page.length() > 256) {
@@ -97,5 +101,26 @@ public class CraftBook implements Book {
         list.setName("pages");
         s.tag.set("pages", list);
     }
+
+	@Override
+	public void setPages(List<String> pages) {
+		 NBTTagList list = new NBTTagList();
+	        int size = pages.size();
+	        if(size>50) size=50;
+	        for(int i=0; i<size; i++){
+	        	String page = pages.get(i);
+	            if(page.length() > 256) {
+	            	page = page.substring(0, 256);
+	            }
+	            if(page != null && !page.equals("") && !page.isEmpty()) {
+	                NBTTagString p = new NBTTagString(page);
+	                p.setName(page);
+	                p.data = page;
+	                list.add(p);
+	            }
+	        }
+	        list.setName("pages");
+	        s.tag.set("pages", list);
+	}
 
 }
