@@ -84,7 +84,6 @@ public class CraftBook implements Book {
     public void setPages(String[] pages) {
         NBTTagList list = new NBTTagList();
         int size = pages.length;
-        if(size>50) size=50;
         for(int i=0; i<size; i++) {
             String page = pages[i];
             // sanity checking on the page
@@ -106,7 +105,6 @@ public class CraftBook implements Book {
 	public void setPages(List<String> pages) {
 		 NBTTagList list = new NBTTagList();
 	        int size = pages.size();
-	        if(size>50) size=50;
 	        for(int i=0; i<size; i++){
 	        	String page = pages.get(i);
 	            if(page.length() > 256) {
