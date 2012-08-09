@@ -1,5 +1,6 @@
 package de.bananaco.bookapi.lib;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.server.ItemStack;
@@ -58,6 +59,16 @@ public class CraftBook implements Book {
         String[] pages = new String[list.size()];
         for(int i=0; i<list.size(); i++) {
             pages[i] = ((NBTTagString) list.get(i)).data;
+        }
+        return pages;
+    }
+    
+    @Override
+    public List<String> getListPages() {
+        NBTTagList list = (NBTTagList) s.tag.get("pages");
+        List<String> pages = new ArrayList<String>();
+        for(int i=0; i<list.size(); i++) {
+            pages.add(((NBTTagString) list.get(i)).data);
         }
         return pages;
     }

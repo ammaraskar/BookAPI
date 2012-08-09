@@ -45,6 +45,12 @@ public interface Book {
 	 * @return String[] (pages)
 	 */
 	public String[] getPages();
+
+	/**
+	 * Returns the pages of the book (or null if not set)
+	 * @return List<String> (pages)
+	 */
+	public List<String> getListPages();
 	
 	/**
 	 * Sets the title of the book
