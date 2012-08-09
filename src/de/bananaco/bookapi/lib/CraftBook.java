@@ -18,7 +18,7 @@ public class CraftBook implements Book {
     
     public CraftBook(CraftItemStack itemstack) throws Exception {
         if(itemstack.getType() == Material.WRITTEN_BOOK || itemstack.getType() == Material.BOOK_AND_QUILL) {
-            // do nothing
+            //do nothing
         } else {
             throw new Exception("CraftItemStack not Material.WRITTEN_BOOK or Material.BOOK_AND_QUILL");
         }
@@ -130,6 +130,11 @@ public class CraftBook implements Book {
 	        }
 	        list.setName("pages");
 	        s.tag.set("pages", list);
+	}
+	
+	@Override
+	public ItemStack getItemStack(){
+		return s;
 	}
 
 }

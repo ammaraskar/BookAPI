@@ -2,6 +2,8 @@ package de.bananaco.bookapi.lib;
 
 import java.util.List;
 
+import net.minecraft.server.ItemStack;
+
 /**
  * API for modifying, viewing, and generally having
  * fun with books
@@ -75,5 +77,7 @@ public interface Book {
 	 * @param pages
 	 */
 	public void setPages(List<String> pages);
+
+	public ItemStack getItemStack();
 
 }
