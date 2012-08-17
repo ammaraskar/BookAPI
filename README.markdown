@@ -1,6 +1,7 @@
 Example Plugin for BookAPI
 ==========
 
+```java
     public class Example extends JavaPlugin implements Listener{
         public void onEnable(){
             this.getServer().getPluginManager().registerEvents(this, this);		
@@ -19,3 +20,4 @@ Example Plugin for BookAPI
             }
         }
     }
+```
